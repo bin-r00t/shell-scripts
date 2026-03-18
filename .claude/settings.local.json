@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip install:*)",
+      "Bash(uv sync:*)",
+      "Bash(tokenizer)",
+      "Bash(uv run tokenizer --help:*)",
+      "Bash(uv run:*)",
+      "Bash(printf:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(chmod:*)",
+      "Bash(uv add:*)",
+      "Bash(./dist/tokenizer:*)",
+      "Bash(echo:*)"
+    ]
+  }
+}
