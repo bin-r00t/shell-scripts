@@ -59,3 +59,31 @@ uv run tokenizer
 # Or run directly with Python
 echo 'test' | python main.py
 ```
+
+## Building Standalone Binary
+
+You can compile the project into a standalone binary that doesn't require Python environment:
+
+```bash
+# Build the binary (takes a few minutes)
+uv run bash build.sh
+
+# The binary will be created at ./dist/tokenizer (~34MB)
+
+# Install system-wide (optional)
+mkdir -p ~/.local/bin
+cp dist/tokenizer ~/.local/bin/
+
+# Add to PATH if not already there (for zsh)
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+After installation, you can use `tokenizer` directly from anywhere:
+
+```bash
+echo 'Hello, world!' | tokenizer
+cat file.txt | tokenizer
+```
+
+The build process uses [Nuitka](https://nuitka.net/) to compile Python code into C++, then into a native binary. All dependencies (including Python runtime and tiktoken) are bundled into a single executable file.
