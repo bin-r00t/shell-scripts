@@ -8,6 +8,11 @@ dependencies = [
     "tiktoken>=0.8.0",
 ]
 
+[project.optional-dependencies]
+build = [
+    "nuitka>=2.0",
+]
+
 [project.scripts]
 tokenizer = "main:main"
 
@@ -20,3 +25,8 @@ include = ["main.py"]
 
 [tool.uv]
 package = true
+
+[dependency-groups]
+dev = [
+    "nuitka>=4.0.5",
+]
